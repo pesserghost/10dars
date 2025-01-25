@@ -72,22 +72,22 @@ if __name__ == "__main__":
     redis_client.delete("mylist")
 
     # 2. LPUSH orqali elementlarni qo'shish
-    lpush_example(redis_client, "mylist", "a", "b", "c")  # ['c', 'b', 'a']
+    lpush_example(redis_client, "mylist", "a", "b", "c")  
 
     # 3. BLPOP funksiyasini ishlatish
-    print("BLPOP:", blpop_example(redis_client, ["mylist"], timeout=1))  # ('mylist', 'c')
+    print("BLPOP:", blpop_example(redis_client, ["mylist"], timeout=1))  
 
     # 4. BRPOP funksiyasini ishlatish
-    print("BRPOP:", brpop_example(redis_client, ["mylist"], timeout=1))  # ('mylist', 'a')
+    print("BRPOP:", brpop_example(redis_client, ["mylist"], timeout=1))  
 
     # 5. RPUSH orqali elementlarni qo'shish
-    rpush_example(redis_client, "mylist", "1", "2", "3")  # ['b', '1', '2', '3']
+    rpush_example(redis_client, "mylist", "1", "2", "3") 
 
     # 6. LRANGE funksiyasini ishlatish
-    print("LRANGE:", lrange_example(redis_client, "mylist", 0, -1))  # ['b', '1', '2', '3']
+    print("LRANGE:", lrange_example(redis_client, "mylist", 0, -1))  
 
     # 7. LPOP funksiyasini ishlatish
-    print("LPOP:", lpop_example(redis_client, "mylist"))  # 'b'
+    print("LPOP:", lpop_example(redis_client, "mylist")) 
 
     # 8. LLEN funksiyasini ishlatish
-    print("LLEN:", llen_example(redis_client, "mylist"))  # 3
+    print("LLEN:", llen_example(redis_client, "mylist")) 
